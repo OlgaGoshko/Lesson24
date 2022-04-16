@@ -1,0 +1,360 @@
+@import 'reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+$white: #ffffff;
+$darkWhite: #F1F2F6;
+$black: #000000;
+$violet: #4543E8;
+$blue: #010032;
+
+$containerMaxWidth: 1280px;
+
+@mixin font ($fontSize, $lineHeight, $color) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    color: $color;
+}
+
+%flex {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+}
+
+.containere {
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.header {
+    background-color: $blue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 300;
+}
+
+.header__inner {
+    @extend %flex;
+    justify-content: space-between;
+    color: $white;
+    padding: 15px 80px;
+    max-height: 80px;
+}
+
+.nav__list {
+    @extend %flex;
+}
+
+.nav__item {
+    margin-left: 40px;
+    @include font(15px, 19px, $white)
+}
+
+.nav__item:first-child {
+    margin-left: 0px;
+}
+
+.header__cart {
+    position: relative;
+    @include font(16px, 19px, $white)
+}
+
+.cart__top::after {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 25px;
+    height: 2px;
+    background-color: $darkWhite;
+    transform: translate(140%, 0);
+}
+
+.cart__bottom:after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 25px;
+    height: 2px;
+    background-color: $darkWhite;
+    transform: translate(140%, 0);
+}
+
+.offer {
+    background-color: $blue;
+    min-height: 100vh;
+}
+
+.title {
+    padding-top: 80px;
+    padding-left: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title__main {
+    margin-top: 100px;
+    @include font(72px, 76px, $white);
+    width: 600px;
+    margin-bottom: 34px;
+}
+
+.title__item {
+    @include font(22px, 34px, $white);
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: $white;
+    width: 200px;
+    height: 65px;
+    border-radius: 30px;
+    text-align: center;
+    @extend %flex;
+    margin-bottom: 100px;
+}
+
+.button__main {
+    @include font(18px, 25px, $black);
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.awards {
+    @extend %flex;
+}
+
+.awards__cup {
+    margin-right: 24px;
+}
+
+.award__title {
+    @include font(18px, 25px, $white);
+    margin-bottom: 7px;
+}
+
+.award__item {
+    @include font(15px, 22px, rgba( 255, 255, 255, $alpha: 0.6));
+}
+
+.part {
+    margin-top: 144px;
+    margin-left: 80px;
+    display: flex;
+}
+
+.left__main {
+    margin-left: 20px;
+    @include font(16px, 24px, $violet);
+    letter-spacing: 2px;
+}
+
+.left__position {
+    @extend %flex;
+    margin-bottom: 114px;
+}
+
+.left__text {
+    margin-top: 3px;
+    @include font(19px, 28px, $black);
+    max-width: 390px;
+    margin-bottom: 27px;
+}
+
+.left__avatar {
+    @extend %flex;
+}
+
+.avatar__name {
+    margin-left: 24px;
+}
+
+.name__name {
+    margin-bottom: 7px;
+    @include font(18px, 24px, $black);
+}
+
+.name__ceo {
+    @include font(15px, 24px, $black);
+}
+
+.part__right {
+    margin-left: 90px
+}
+
+.right__title {
+    @include font(48px, 53px, $black);
+    max-width: 790px;
+}
+
+.right__feats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 74px;
+
+}
+
+.feats__number {
+    @include font(60px, 66px, $violet);
+}
+
+.feats__text {
+    margin-top: 8px;
+    @include font(21px, 30px, $black);
+}
+
+.feats__logo {
+    margin-top: 69px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.work__inner {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.work__position {
+    @extend %flex;
+    margin-top: 180px;
+}
+
+.work__title {
+    width: 700px;
+    @include font(60px, 66px, $black);
+    margin-top: 26px;
+}
+
+.product__top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.product__left {
+    max-width: 510px;
+}
+
+.product__group, .desing__group, .center__group, .bottom__group {
+    @extend %flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.product__title, .desing__title, .center__title, .bottom__title {
+    @include font(24px, 29px, $black);
+}
+
+.product__text, .desing__text, .center__text, .bottom__text {
+    @include font(12px, 27px, $black);
+    margin-top: 4px;
+    max-width: 500px;
+    margin-bottom: 24px;
+}
+
+.product__right, .bottom__left {
+    max-width: 620px;
+}
+
+.product__center {
+    margin-top: 80px;
+    max-width: 740px;
+    margin-left: 390px;
+}
+
+.center__text {
+    margin-bottom: 52px;
+}
+
+.bottom__right {
+    max-width: 520px;
+}
+
+.product__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom__button {
+    background-color: $violet;
+    max-width: 160px;
+    max-height: 160px;
+    padding: 56px 44px;
+    text-align: center
+}
+
+.button__project {
+    @include font(16px, 24px, $white);
+}
+
+.service__position {
+    @extend %flex;
+}
+
+.position__maine {
+    margin-left: 20px;
+    @include font(16px, 24px, $white);
+    letter-spacing: 2px;
+}
+
+.content {
+    background-color: $blue;
+    margin-top: 120px;
+    padding-top: 144px;
+    padding-left: 122px;
+    padding-right: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 145px;
+}
+
+.content__title {
+    @include font(48px, 53px, $white);
+    max-width: 352px;
+    margin-top: 22px;
+    padding-bottom: 75px;
+}
+
+.inside {
+    margin-left: 172px;
+    margin-top: 16px;
+}
+
+.inside__main {
+    @include font(24px, 29px, $white);
+    margin-top: 20px;
+}
+
+.inside__text {
+    @include font(18px, 27px, $white);
+    max-width: 290px;
+    margin-top: 23px;
+}
+
+.content__arrows {
+    margin-top: 58px;
+}
+
+.inside__button {
+    max-width: 260px;
+    border-radius: 40px;
+    background-color: $white;
+    text-align: center;
+    padding: 20px 20px;
+    margin-top: 140px;
+    
+}
+
+.inside__wavy {
+    margin-top: 55px;
+    margin-left: 120px;
+}
